@@ -34,8 +34,9 @@ year = 0
 
 #Determines if dates are valid		  
 def valid_date(year, start_month, start_day, end_month, end_day):
-		if leapyr(year):
-			monthLen[2] = 29
+		if not leapyr(year) and start_month == 2:
+			if  start_day == 29:
+				return False
 		if not (year >= 1800 and year <= 2500):
 				return False
 		if not (start_month >= 1 and start_month <= 12):
