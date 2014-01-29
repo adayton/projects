@@ -1,6 +1,5 @@
 """
-How many distinct chambers in the cavern?
-
+How many distinct chambers in the cavern? Project 4, CIS 210
 Author: Austin Dayton, Mark Poliquin
 Credits: Consulted with Anna on help with the recursion
 CIS 210, Winter 2013, Week 4
@@ -192,13 +191,13 @@ def fill(cave, row, col, color):
 	"""
 	## Recursion for filling the cave
 	if row < 0:
-		return True
+		return False
 	if row >= len(cave):
-		return True
+		return False
 	if col < 0:
-		return True
+		return False
 	if col >=  len(cave[0]):
-		return True
+		return False
 		
 	### flood-fill algorithm 
 	if cave[row][col] == AIR : 
@@ -222,14 +221,11 @@ def main():
 	"""
 	desc = sys.argv[1]
 	cave = read_cave(desc)
-	# dump_cave(cave)  ## May be useful for debugging
+	# dump_cave(cave)  ##useful for debugging
 	display(cave)
 	chamber_counter = 0
 	
-	### FIXME: The main loop should look for air pockets
-	###		   and fill each air pocket with a new color
-	###		   of water
-	###
+	###look for air pocket and fill each air pocket with new color of water
 	for row in range( len(cave)) :
 		for col in range( len(cave[0])):
 			if cave[row][col] == AIR: #counts how many chambers of air are found
@@ -238,7 +234,7 @@ def main():
 				fill(cave, row, col, color)
 				grid.get_next_color()
 				
-	### FIXME: print the number of chambers found
+	###print the number of chambers found
 	if chamber_counter != 0:
 		print(chamber_counter, "chambers in the cavern.")
 	else:
