@@ -9,7 +9,9 @@ Authors:	Austin Dayton
 			
 Consulted with: Anna the lab aid helped us realize the reason our functions were not 
 				outputting correctly was that we were not calling them in the main function. 
-"""
+				Johnathan assisted in realizing calc_days logic, for all if statements 
+				Kirsten helped with validate debugging
+"""	
 
 
 import sys		  # For exit with a message
